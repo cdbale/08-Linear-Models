@@ -7,6 +7,63 @@ output:
     css: style.css
 ---
 
+## Remember Who You Are
+
+Who are you?
+
+## Remember Who You Are
+
+Who are you?
+
+- You are a child of God
+- You are a child of the covenant
+- You are a disciple of Jesus Christ
+
+## Your Heavenly Father Loves You
+
+“...your Heavenly Father loves you—each of you. That love never changes. It is not influenced by your appearance, by your possessions, or by the amount of money you have in your bank account. It is not changed by your talents and abilities. It is simply there. It is there for you when you are sad or happy, discouraged or hopeful. God’s love is there for you whether or not you feel you deserve love. It is simply always there.”
+
+Thomas S. Monson, "We Never Walk Alone," General Conference address, October 2013.
+
+## Heavenly Father and Jesus Christ Provided the Atonement
+
+“...However late you think you are, however many chances you think you have missed, however many mistakes you feel you have made or talents you think you don’t have, or however far from home and family and God you feel you have traveled, I testify that you have not traveled beyond the reach of divine love. It is not possible for you to sink lower than the infinite light of Christ’s Atonement shines.”
+
+Jeffrey R. Holland, "The Laborers in the Vineyard," General Conference Address, October 1995.
+
+## What does it mean to be "A child of the covenent?"
+
+- You make the same covenants with Heavenly Father and Jesus Christ that They made with Abraham
+- Through living those covenants you receive promised blessings
+
+President Nelson taught that the promises include “the right to receive the fullness of the gospel, enjoy the blessings of the priesthood, and qualify for God’s greatest blessing—that of eternal life.”
+
+Russell M. Nelson, "Covenants," October 2011 General Conference.
+
+## What does it mean to be a "Disciple of Jesus Christ?"
+
+"A disciple is one who has been baptized and is willing to take upon him or her the name of the Savior and follow Him. A disciple strives to become as He is by keeping His commandments in mortality..."
+
+"...genuine discipleship is a state of being. This suggests more than studying and applying a list of individual attributes. Disciples live so that the characteristics of Christ are woven into the fiber of their beings, as into a spiritual tapestry."
+
+Robert D. Hales, "Becoming a Disciple of Our Lord Jesus Christ," General Conference, April 2017.
+
+## See Your Divine Identity
+
+"I believe that if the Lord were speaking to you directly . . . , the first thing He would make sure you understand is your true identity. My dear friends, you are literally spirit children of God..."
+
+"...No identifier should displace, replace, or take priority over these three enduring designations: “child of God,” “child of the covenant,” and “disciple of Jesus Christ."
+
+"Make no mistake about it: Your potential is divine. With your diligent seeking, God will give you glimpses of who you may become."
+
+Russell M. Nelson "Choices for Eternity," worldwide devotional for young adults, 15 May 2022.
+
+## Unlock Your Divine Potential
+
+"I solemnly declare to each of you today that you are literally daughters and sons of God! As we make and keep sacred covenants, we are bound to Christ through those covenantal bonds. As we try to emulate the perfect example of Jesus Christ, we become His disciples. And by virtue of His infinite and atoning sacrifice, He will make more of our lives than we could ever make without Him."
+
+C. Shane Reese, "Developing Eyes to See," January 9, 2024.
+
 ## Marketing Analytics Process
 
 <center>
@@ -52,7 +109,7 @@ $$\epsilon \sim Normal(0, 1)$$
 The **normal distribution**, and every other **probability distribution**, has a few essential components:
 
 - The **support** are the values on the x-axis that have non-zero probability.
-- The **probability** of some subset of the support is the associated area under the curve on the y-axis.
+- The **probability** of some subset of the support is the associated area under the curve.
 
 <center>
 ![](Figures/distribution_normal.png){width=750px}
@@ -94,7 +151,7 @@ How do we simulate data from this?
 
 $$y = \beta_0 + \beta_1 x + \epsilon, \text{ where } \epsilon \sim Normal(0, 1)$$
 
-```{r message=FALSE}
+```{r message=FALSE, warning=FALSE}
 # Load packages.
 library(tidyverse)
 
@@ -202,12 +259,6 @@ Residuals can be positive and negative, so we make the sum of the **squared resi
 ![](Figures/lm_SSE_02.png){width=600px}
 </center>
 
----
-
-<center>
-![](Figures/lm_fit_04.png){width=600px}
-</center>
-
 ## Using tidymodels
 
 The **tidymodels** framework is a collection of packages for modeling using tidyverse principles. The goal is to provide the same consistency and ease-of-use for modeling that the tidyverse provides for importing, wrangling, visualizing, and reporting data.
@@ -219,7 +270,7 @@ library(tidymodels)
 
 ## Specify the Model Type and Engine
 
-In the tidymodels framework, we specify the model **type** and then set the **engine** we'd like to estimate the model with. The engine is either another R package that likely requires its own unique syntax or an entirely different modeling language.
+In the tidymodels framework, we specify the model **type** and then set the **engine** we'd like to estimate the model with. The engine is typically another R package that would normally require its own unique syntax.
 
 This allows us to use a variety of modeling packages and languages while keeping the same syntax.
 
