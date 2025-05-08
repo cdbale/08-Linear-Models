@@ -1,0 +1,72 @@
+---
+title: "Exercise 10"
+author: "Marc Dotson"
+format: docx
+---
+
+1. Simulate sales data as a function of promotional spend using a regression. Name the observed variables `sales` and `promotional_spend`. Use different parameter values than we did in class.
+2. Visualize the simulated data and add the best fitting *line* using `geom_smooth()`.
+3. Fit the regression using {tidymodels}.
+4. Render the Quarto document into Word and upload to Canvas.
+
+**Five points total, one point each for:**
+
+- **Replacing y with sales and x with promotional_spend.**
+- **Using parameter values other than beta0 = 3 and beta1 = 7.**
+- **Visualizing the simulated data with geom_smooth(method = "lm").**
+- **Fitting the regression using {tidymodels}.**
+- **One point for submitting a rendered Word document.**
+
+## Simulate Data
+
+Let's load the {tidyverse} and {tidymodels}, set the simulation seed, specify the parameter and variable values, and simulate sales data using a regression.
+
+```{r}
+# Load packages.
+library(tidyverse)
+library(tidymodels)
+
+# Set the simulation seed.
+set.seed(42)
+
+# Specify the parameter and variable values.
+nobs <- 300
+beta0 <- 5
+beta1 <- 12
+
+# Simulate data using the regression model.
+sim_data <- tibble(
+  promotional_spend = runif(nobs, min = 0, max = 10),
+  sales = beta0 + beta1 * promotional_spend + rnorm(nobs, mean = 0, sd = 3)
+)
+
+sim_data
+```
+
+Our simulated data consists of an explanatory variable `promotional_spend` drawn from a random uniform distribution (values between 0 and 10) and a response variable `sales` equal to `beta0` plus `beta1` times `promotional_spend` plus an error term, which are drawn from a random normal distribution (mean 0 and standard deviation 3).
+
+## Visualize the Simulated Data
+
+```{r}
+# Visualize the simulated data.
+ggplot(sim_data, aes(x = promotional_spend, y = sales)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm") +
+  labs(
+    title = "Simulated Data"
+  )
+```
+
+This data clearly follows a line, which isn't surprising since we've simulated it that way.
+
+## Fit the Model
+
+```{r}
+# Fit the model.
+linear_reg() %>% 
+  set_engine("lm") %>% 
+  fit(sales ~ promotional_spend, data = sim_data)
+```
+
+As you can see, the estimate for `beta0`, the intercept parameter, is close to 5, the value we specified. Similarly, the estimate for `beta1`, the slope parameter associated with `promotional_spend`, is close to 12, the value we specified.
+
