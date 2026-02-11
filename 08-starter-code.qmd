@@ -6,12 +6,6 @@ editor: visual
 
 This file contains the code for Lecture 08: Linear Models.
 
-## Import Libraries
-
-```{r}
-library(tidyverse)
-```
-
 ## A Note on Randomization
 
 ```{r}
@@ -22,8 +16,6 @@ rnorm(1)
 rnorm(1)
 rnorm(1)
 ```
-
----
 
 ```{r}
 # But using set.seed() we at least start at the *same* random number each time.
@@ -42,8 +34,10 @@ rnorm(1)
 Whenever we design a statistical model, it is possible to simulate data from this model. In other words, we can pretend that our model captures the true "story" of how data is generated, and use that model to generate data.
 
 ```{r}
-## set a random seed so that our simulation is consistent
+# Load packages.
+library(tidyverse)
 
+## set a random seed so that our simulation is consistent
 set.seed(42)
 
 # Set the parameter values.
@@ -81,7 +75,6 @@ To define a regression model, we just need two things: the **model type** and ho
 reg_model <- linear_reg() |> 
   set_engine("lm")
 ```
-
 
 ```{r}
 # what is this reg_model object?

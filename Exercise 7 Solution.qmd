@@ -4,9 +4,12 @@ author: "Cameron Bale"
 format: docx
 ---
 
+Kroger is specifically interested in whether their spend on promotions (`Any_Promo_Spend`) and discounts (`Price_Decr_Spend`) is driving their sales (`Sales`) in the soup category. Do the following:
+
 1. Import the soup data and the `tidyverse` and `tidymodels` libraries.
 2. Create a regression model and fit it to the appropriate variables.
 3. Examine the coefficients - do promotional spend and price decreases appear to have a positive or negative effect on sales?
+4. Render the Quarto document into Word and upload to Canvas.
 
 **Five points total, one point for:**
 
